@@ -15,8 +15,6 @@ describe "User pages" do
         expect { click_button submit }.not_to change(User, :count)
       end
 
-
-
       describe "after submission" do
         before { click_button submit }
 
@@ -44,6 +42,7 @@ describe "User pages" do
          it { should have_content('Welcome to the Sample App!')}
          it { should have_selector('h1', text: user.name) }
          it { should have_selector('title', text: user.name) }
+         it { should have_link('Sign out') }
       end
     end
   end
